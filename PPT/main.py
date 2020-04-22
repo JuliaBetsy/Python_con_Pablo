@@ -1,4 +1,6 @@
 import random 
+from string import Template
+import os
 
 def PiedraPapelTijera(jugador1, jugador2):
 
@@ -15,7 +17,7 @@ solucionesJ1= {
         "piedra":"gana",
         "tijera":"pierde"
     }, 
-    "tijeras": {
+    "tijera": {
        "tijera":"empate",
        "papel": "pierde",
        "piedra":"gana" 
@@ -23,14 +25,29 @@ solucionesJ1= {
 }
 
 def preguntaJugador ():
-    return "papel"
+    print ("Elige\"piedra\",\"papel\" o \"tijera\"")
+    eleccion=input()
+
+    return eleccion
 
 def preguntaMaquina ():
     eleccionMaquina= random.choice(["piedra", "papel","tijera"])
     return eleccionMaquina
 
-print (
-    PiedraPapelTijera(preguntaJugador(),preguntaMaquina())
-)
 
+
+eleccionJugador=preguntaJugador()
+eleccionMaquina= preguntaMaquina ()
+resultado=PiedraPapelTijera(eleccionJugador,eleccionMaquina)
+
+salida=Template("el jugador ha elegido: $jugador, la maquina ha elegido: $maquina.\n el resultado ha sido: $resultado ")
+
+
+print(
+    salida.substitute(
+        jugador= eleccionJugador,
+        maquina= eleccionMaquina,
+        resultado= resultado
+    )
+)
 

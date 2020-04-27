@@ -34,20 +34,32 @@ def preguntaMaquina ():
     eleccionMaquina= random.choice(["piedra", "papel","tijera"])
     return eleccionMaquina
 
+def jugar():
+    eleccionJugador=preguntaJugador()
+    eleccionMaquina= preguntaMaquina ()
+    resultado=PiedraPapelTijera(eleccionJugador,eleccionMaquina)
+
+    salida=Template("el jugador ha elegido: $jugador, la maquina ha elegido: $maquina.\n el resultado ha sido: $resultado ")
 
 
-eleccionJugador=preguntaJugador()
-eleccionMaquina= preguntaMaquina ()
-resultado=PiedraPapelTijera(eleccionJugador,eleccionMaquina)
-
-salida=Template("el jugador ha elegido: $jugador, la maquina ha elegido: $maquina.\n el resultado ha sido: $resultado ")
-
-
-print(
-    salida.substitute(
-        jugador= eleccionJugador,
-        maquina= eleccionMaquina,
-        resultado= resultado
+    print(
+        salida.substitute(
+            jugador= eleccionJugador,
+            maquina= eleccionMaquina,
+            resultado= resultado
+        )
     )
-)
+
+salida = False 
+while not (salida):
+    print(" puedes \"jugar\"o \"salir\" \n>", end=":D ")
+    lectura = input( ) 
+    if (lectura== "salir"):
+        print("Adeus")
+        salida = True 
+
+    elif (lectura== "jugar"):
+        jugar()
+    else :
+        print ("no entiendo")
 

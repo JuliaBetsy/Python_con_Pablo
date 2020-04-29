@@ -49,6 +49,24 @@ def jugar():
             resultado= resultado
         )
     )
+    # if resultado == "gana":
+    #     partidas ["gana"]+= 1
+    # elif resultado == "empate":
+    #     partidas ["empate"]+= 1
+    # elif resultado == "pierde":
+    #     partidas ["pierde"] += 1 
+
+    partidas[resultado] += 1
+    
+partidas = {
+    "gana": 0,
+    "empate": 0,
+    "pierde": 0
+}
+
+contador =Template("G:$ganadas E:$empatadas P:$perdidas")
+
+    
 
 salida = False 
 while not (salida):
@@ -60,6 +78,14 @@ while not (salida):
 
     elif (lectura== "jugar"):
         jugar()
+        print(
+            contador.substitute(
+                ganadas= partidas ["gana"],
+                empatadas= partidas ["empate"],
+                perdidas= partidas ["pierde"]
+            )
+        )
+
     else :
         print ("no entiendo")
 

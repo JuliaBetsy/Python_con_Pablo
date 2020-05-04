@@ -28,9 +28,27 @@ def preguntaJugador ():
     print ("Elige\"piedra\",\"papel\" o \"tijera\"")
     eleccion=input()
 
+    jugadas[eleccion] += 1
+
     return eleccion
 
 def preguntaMaquina ():
+
+    if jugadas ["tijera"] >= jugadas ["papel"]:
+        # elegir entre papel o piedra
+        if jugadas ["papel"]> jugadas ["piedra"]:
+            return "piedra"
+        else : 
+            return "papel"
+
+    else : 
+        if jugadas ["tijera"]>= jugadas["piedra"]:
+            return "piedra"
+        else: 
+            return "tijera"    
+
+
+def preguntaMaquinaRandom ():
     eleccionMaquina= random.choice(["piedra", "papel","tijera"])
     return eleccionMaquina
 
@@ -63,6 +81,14 @@ partidas = {
     "empate": 0,
     "pierde": 0
 }
+
+jugadas = {
+    "piedra": 0,
+    "papel": 0,
+    "tijera": 0
+}
+
+
 
 contador =Template("G:$ganadas E:$empatadas P:$perdidas")
 

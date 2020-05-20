@@ -1,4 +1,5 @@
 import persona
+from string import Template
 
 lista=[]
 nombres = ["Juan", "Pepe", "Dieter", "technoviking", "chayanne"] 
@@ -11,7 +12,13 @@ def escupir (persona):
 for nombre in nombres:
     print (nombre)
 
-    lista.append (persona.Persona (nombre))
+    aux = (persona.Persona (nombre))
+
+    if (nombre == "Dieter"):
+        aux.presentacion = Template("Hallo, ich bin $nombre und ich hasse $color Socken")  
+
+
+    lista.append (aux)
 
 pass
 

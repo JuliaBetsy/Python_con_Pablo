@@ -14,10 +14,6 @@ for nombre in nombres:
 
     aux = (persona.Persona (nombre))
 
-    if (nombre == "Dieter"):
-        aux.presentacion = Template("Hallo, ich bin $nombre und ich hasse $color Socken")  
-
-
     lista.append (aux)
 
 pass

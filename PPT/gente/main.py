@@ -1,30 +1,22 @@
 import persona
 from string import Template
+from discoteca import Discoteca 
 
 lista=[]
 nombres = ["Juan", "Pepe", "Dieter", "technoviking", "chayanne"] 
 #hain es una discoteca muy perversa
-hain=[]
-
-def escupir (persona):
-    print ("heute leider nicht " + persona.nombre)
+hain = Discoteca (nombre = "Hain")
 
 for nombre in nombres:
     print (nombre)
 
     aux = (persona.Persona (nombre))
+    #lista.append (aux)
+    hain.añadirColaEntrar (aux)
 
-    lista.append (aux)
+for tic in range (0, 18):
+    print (tic)
+    hain.intentarPasar ()
 
-pass
-
-for p in lista:
-    p.presentate ()
-    if (p.calcetines != "blancos"):
-        hain.append (p)
-    else :
-        escupir (p) 
-
-pass
 
     

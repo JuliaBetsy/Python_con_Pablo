@@ -6,21 +6,21 @@ from string import Template
 MAX_HIGADO = 100
 
 
-class Persona:
-    def __init__ (self, nombre = "el señor tofu", aforo=100):
+class Discoteca:
+    def __init__ (self, nombre = "el señor tofu", aforoMaximo=100):
         self.nombre = nombre
-        self.aforoMaximo = aforo
+        self.aforoMaximo = aforoMaximo
         self.dinero = 0
         self.colaEntrada = []
         self.genteDentro =[]
 
     def añadirColaEntrar (self, persona):
 
-        self.ColaEntrada.append (persona)
+        self.colaEntrada.append (persona)
 
     def intentarPasar (self):
 
-        if (len (self.genteDentro) < aforoMaximo):
+        if (len (self.genteDentro) < self.aforoMaximo):
 
             siguiente = self.colaEntrada.pop (0)
             if (siguiente.calcetines != "blancos"):
